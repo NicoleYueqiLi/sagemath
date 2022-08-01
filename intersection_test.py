@@ -38,7 +38,7 @@ def timing_test(input_file_name, output_file_name):
 
     timing_test('intersection_test.txt', 'intersection_res.txt')
     """
-    test = RealSet.load_test_file(input_file_name)
+    test = load_test_file(input_file_name)
     total_time = 0
     with open(output_file_name, 'w') as fp:
       for i in range(len(test)-1):
