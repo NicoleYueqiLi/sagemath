@@ -3,12 +3,18 @@ from time import process_time
 def load_test_file(input_file_name):
     """
     Load input File.
+    
     INPUT: 
-    -``input_file_name``: testing file name
+    
+    - ``input_file_name``: testing file name
+    
     OUTPUT:
+    
     list.
+    
     EXAMPLES::
-    load_test_file('intersection_test.txt')
+
+        load_test_file('intersection_test.txt')
     """
     with open(input_file_name, 'r') as rd:
         lines = rd.readlines()
@@ -18,13 +24,18 @@ def load_test_file(input_file_name):
 def timing_test(input_file_name, output_file_name):
     """
     Testing intersection cpu time
+    
     INPUT: 
-    -``input_file_name``: testing file name
-    -``output_file_name``: output file name, where out stored
+    
+    - ``input_file_name``: testing file name
+    - ``output_file_name``: output file name, where out stored
     OUTPUT:
+    
     file
+    
     EXAMPLES::
-    timing_test('union_test.txt', 'union_res.txt')
+    
+        timing_test('union_test.txt', 'union_res.txt')
     """
     test = load_test_file(input_file_name)
     total_time = 0
