@@ -6,7 +6,7 @@ def load_test_file(input_file_name):
 
     INPUT: 
 
-    -``input_file_name``: testing file name
+    - ``input_file_name``: testing file name
 
     OUTPUT:
 
@@ -27,8 +27,8 @@ def timing_test(input_file_name, output_file_name):
 
     INPUT: 
 
-    -``input_file_name``: testing file name
-    -``output_file_name``: output file name, where out stored
+    -  ``input_file_name``: testing file name
+    -  ``output_file_name``: output file name, where out stored
 
     OUTPUT:
 
