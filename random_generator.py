@@ -6,8 +6,8 @@ def createRandomList(num, start=-9223372036854775800, end=9223372036854775807, a
     
     - ``num``: the amount of numbers 
     - ``start``, ``end``: range of random generated interval
-    -  ``allow_repeat``: boolean, if repeated boundaries are allowed
-    -  
+    - ``allow_repeat``: boolean, if repeated boundaries are allowed
+    - ``sort``: boolean, if the list number are sorted
     
     OUTPUT:
     
