@@ -56,3 +56,4 @@ def timing_test(input_file_name, output_file_name):
         fp.write("%s\n" % avg)
     print("average", avg)
     print("done")
+
