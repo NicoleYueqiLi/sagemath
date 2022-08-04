@@ -1,4 +1,0 @@
-g = RealsetTestTool()
-interval_list = g.load_test_file("test_1000_1000_cc_ff.txt")
-functions = {"union": lambda x: x[0].union(x[1])}
-g.rolling_timing_test(functions, 2, "test_1000_1000_cc_ff.txt")
