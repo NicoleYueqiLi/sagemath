@@ -3,6 +3,30 @@ from sage.sets.real_set import RealSet
 from sage.rings.infinity import infinity, minus_infinity
 from time import process_time
 
+ ###################   Generate testing file #####################
+# g = RealsetTestTool(start=-10 ** 9, end=10 ** 9)
+# my_case = []
+# for _ in range(1000):
+#     # g.num = random.choice(range(1, 101))
+#     g.num = 1000
+#     g.sort = random.choice([True, False])
+#     g.disjoint = random.choice([True, False])
+#     g.digit_type = random.choice(["Int", "Double"])
+#     # g.boundary_type = {"cc": 0.25, "co": 0.25, "oc": 0.25, "oo": 0.25}
+#     # g.interval_type = {"ff": 0.9, "fi": 0.05, "if": 0.05, "ii": 0}
+#     g.interval_type = {"ff": 0.98, "fi": 0.01, "if": 0.01, "ii": 0}
+#     my_case.append(g.create_random_interval())
+# g.save_test_file(my_case, "test.txt")
+
+ ###################   Load file and timing    #####################
+# g = RealsetTestTool()
+# interval_list = g.load_test_file("test.txt")
+# functions = {"union": lambda x: x[0].union(x[1]),
+#              "difference": lambda x: x[0].difference(x[1]),
+#              "intersection": lambda x: x[0].intersection(x[1])}
+# g.rolling_timing_test(functions, 2, "test.txt")
+
+
 
 class RealsetTestTool:
     def __init__(self, num=10, start=-9223372036854775800, end=9223372036854775807, allow_repeat=True,
@@ -241,25 +265,3 @@ class RealsetTestTool:
                                                                             interval_lists)))
 
 
-####################   Generate testing file #####################
-# g = RealsetTestTool(start=-10 ** 9, end=10 ** 9)
-# my_case = []
-# for _ in range(1000):
-#     # g.num = random.choice(range(1, 101))
-#     g.num = 1000
-#     g.sort = random.choice([True, False])
-#     g.disjoint = random.choice([True, False])
-#     g.digit_type = random.choice(["Int", "Double"])
-#     # g.boundary_type = {"cc": 0.25, "co": 0.25, "oc": 0.25, "oo": 0.25}
-#     # g.interval_type = {"ff": 0.9, "fi": 0.05, "if": 0.05, "ii": 0}
-#     g.interval_type = {"ff": 0.98, "fi": 0.01, "if": 0.01, "ii": 0}
-#     my_case.append(g.create_random_interval())
-# g.save_test_file(my_case, "test.txt")
-
-###################   Load file and timing    #####################
-# g = RealsetTestTool()
-# interval_list = g.load_test_file("test.txt")
-# functions = {"union": lambda x: x[0].union(x[1]),
-#              "difference": lambda x: x[0].difference(x[1]),
-#              "intersection": lambda x: x[0].intersection(x[1])}
-# g.rolling_timing_test(functions, 2, "test.txt")
