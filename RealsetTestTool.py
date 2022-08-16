@@ -201,6 +201,46 @@ class RealsetTestTool:
             intervals.sort()
         return intervals
 
+    def create_two_realsets_with_fixed_intersection_num(self, output_num):
+        if output_num > self.num:
+            raise ValueError("Invalid output_num: should be smaller or equal than input num.")
+        arr = set()
+        while len(arr) < 4 * self.num:
+            arr.add(self._generator())
+
+        arr = list(arr)
+        arr.sort(reverse=True)
+        res1, res2 = [], []
+        for _ in range(output_num):
+            a = arr.pop()
+            c = arr.pop()
+            b = arr.pop()
+            d = arr.pop()
+            res1.append([a, b, None, None])
+            res2.append([c, d, None, None])
+        for _ in range(self.num - output_num):
+            a = arr.pop()
+            b = arr.pop()
+            c = arr.pop()
+            d = arr.pop()
+            res1.append([a, b, None, None])
+            res2.append([c, d, None, None])
+        self._init_types()
+        for interval in res1:
+            boundary_type = self._boundary_type_indicator.pop()
+            interval[2], interval[3] = int(boundary_type < 2), int(boundary_type % 2 == 0)
+        self._init_types()
+        for interval in res2:
+            boundary_type = self._boundary_type_indicator.pop()
+            interval[2], interval[3] = int(boundary_type < 2), int(boundary_type % 2 == 0)
+
+        random.shuffle(res1)
+        random.shuffle(res2)
+        return res1, res2
+
+
+
+
     @staticmethod
     def save_test_file(intervals_list, output_dir):
         with open(output_dir, 'a') as fp:
@@ -263,5 +303,4 @@ class RealsetTestTool:
             print("{func_name} executed {use_time} s in average.".format(func_name=name,
                                                                         use_time=function_dict[name] / len(
                                                                             interval_lists)))
-
 
